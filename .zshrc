@@ -16,6 +16,9 @@ export ZSH=/Users/chirag/.oh-my-zsh
 # ZSH_THEME="random"
 # ZSH_THEME="kennethreitz"
 # ZSH_THEME="eastwood"
+# ZSH_THEME="steeef"
+# ZSH_THEME="agnoster"
+# ZSH_THEME="gallois"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -67,12 +70,13 @@ source ~/.bash_profile
 
 ##############################################################################
 #
-# Powerline Configurations
+# Powerlevel Configurations
 #
 ##############################################################################
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
 ##############################################################################
 #

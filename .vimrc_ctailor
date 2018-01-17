@@ -1,0 +1,72 @@
+" Python Auto pastetoggle
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+highlight BadWhitespace ctermbg=red guibg=darkred
+
+syntax on
+set ruler
+set number
+set vb
+set foldmethod=indent
+set foldlevel=99
+" set mouse=a 	" allows using mouse to click in vim, but prohibits copying from vim
+" set paste	" allows pasting without formatting
+
+" don't highlight the last search upon startup
+" set viminfo="h"
+
+" Required values
+set smartindent
+set autoindent
+set smarttab
+set shiftwidth=4
+set expandtab
+
+" My Autocommands
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set fileformat=unix |
+    \ set encoding=utf-8
+
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+au BufRead,BufNewFile *.js,*.html,*.css
+    \ set tabstop=2 |
+    \ set shiftwidth=2
+
+" autocmd BufNewFile *.cpp	0r ~/DO_NOT_DELETE.cpp
+
+inoremap {<CR> {<CR>}<Esc><Up>o
+nnoremap <space> za
+
+map <leader>v <C-W>v
+map <leader>q <C-W>q
+
+" uncomment to use a different color map
+":hi Comment   term=bold cterm=NONE ctermfg=Blue ctermbg=NONE gui=NONE guifg=Blue guibg=NONE
+":hi Constant  term=underline cterm=NONE ctermfg=Red ctermbg=NONE gui=NONE guifg=Magenta guibg=NONE
+":hi Special   term=bold cterm=NONE ctermfg=Magenta ctermbg=NONE gui=NONE guifg=SlateBlue guibg=NONE
+":hi Identifier   term=underline cterm=NONE ctermfg=Cyan ctermbg=NONE gui=NONE guifg=Cyan guibg=NONE
+":hi Statement term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=bold guifg=Brown guibg=NONE
+":hi PreProc   term=underline cterm=NONE ctermfg=Magenta ctermbg=NONE gui=NONE guifg=Purple guibg=NONE
+":hi Type      term=underline cterm=NONE ctermfg=Green ctermbg=NONE gui=bold guifg=SeaGreen guibg=NONE
+":hi Underlined   term=underline cterm=underline ctermfg=Magenta gui=underline guifg=SlateBlue
+":hi Ignore term=NONE cterm=NONE ctermfg=white ctermbg=NONE gui=NONE guifg=bg guibg=NONE
+
+"Tell you if you are in insert mode
+set showmode
+
+"tell you how many lines have been changed
+set report=0
