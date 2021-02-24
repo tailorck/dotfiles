@@ -26,7 +26,7 @@ set foldlevel=99
 
 " Required values
 set smartindent
-set autoindent
+" set autoindent
 set smarttab
 set shiftwidth=4
 set expandtab

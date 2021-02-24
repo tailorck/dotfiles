@@ -83,39 +83,6 @@ let g:pydocstring_enable_mapping = 0
 
 
 " ================================================================================ 
-" ale
-" ================================================================================ 
-Plugin 'w0rp/ale' " syntax checker
-let g:ale_enabled = 1
-" let g:ale_echo_msg_error_str = 'E'
-" let g:ale_echo_msg_warning_str = 'W'
-" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_fixers = ['remove_trailing_lines', 'trim_whitespace', 'autopep8', 'isort']
-let g:ale_linters = {
-\   'python': ['flake8'],
-\}
-let g:ale_python_flake8_options = '-m flake8'
-let g:ale_python_flake8_use_global = 1
-let g:ale_lint_delay = 200
-let g:ale_lint_on_enter = 1
-let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
-let g:ale_python_flake8_executable = 'python2'  " python3
-let g:pymode_options_max_line_length=80
-let b:ale_warn_about_trailing_whitespace = 0
-" let g:pymode_lint_cwindow = 1
-" let g:pymode_lint_on_fly = 1
-" autocmd FileType python set colorcolumn=80  " move the vertical red line over to 120 characters
-
-"highlight ExtraWhitespace ctermbg=red guibg=red
-""highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-"match ExtraWhitespace /\s\+$/
-"autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-"autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-"autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-"autocmd BufWinLeave * call clearmatches()
-
-" ================================================================================ 
 " 
 " ================================================================================ 
 Plugin 'timothycrosley/isort' " sort python imports alphabetically and by group
@@ -127,9 +94,9 @@ Plugin 'timothycrosley/isort' " sort python imports alphabetically and by group
 Plugin 'scrooloose/nerdtree'
 
 " start nerdtree when vim opens (with or without a file)
-autocmd VimEnter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd VimEnter * NERDTree
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Ctrl+n toggles nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -147,34 +114,31 @@ let NERDTreeIgnore = ['\.pyc$']
 if exists('g:loaded_webdevicons')
     call webdevicons#refresh()
 endif
+
 " ================================================================================ 
 " 
 " ================================================================================ 
 Plugin 'scrooloose/nerdcommenter'
-
 
 " ================================================================================ 
 " 
 " ================================================================================ 
 Plugin 'Vimjas/vim-python-pep8-indent'
 
-
 " ================================================================================
 "
 " ================================================================================
 Plugin 'vim-airline/vim-airline'
-
-
 
 " ================================================================================
 "
 " ================================================================================
 Plugin 'kien/ctrlp.vim' 
 
-
+" ================================================================================
+"
 " ================================================================================
 Plugin 'ryanoasis/nerd-fonts'  " special fonts for tree viewers etc
-
 
 " ================================================================================ 
 " 
